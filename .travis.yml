@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+  - '6'
+
+env:
+  global:
+    - URI_SCHEME: http
+    - CNAME: dojocon.coderdojo.jp
+    - BASEURL: ''
+    - GIT_USER: Kite
+    - GIT_EMAIL: ixkaito@gmail.com
+    - GITHUB_RELEASE_REPO: dojocon-japan/dojocon.coderdojo.jp
+    - RELEASE_BRANCH: &release_branch release
+
+branches:
+  only:
+    - master
+    - *release_branch
+
+script:
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$RELEASE_BRANCH" ]; then exit 0; fi
+  - if [ ! -f CNAME ]; then touch CNAME; fi
+  - echo $CNAME > CNAME
+
+after_success:
+  - git config user.name "${GIT_USER}"
+  - git config user.email "${GIT_EMAIL}"
+  - git add --all && git commit -m "Deploy from Travis CI"
+  - git push -f -q "https://${GITHUB_TOKEN}@github.com/${GITHUB_RELEASE_REPO}.git" HEAD:gh-pages > /dev/null 2>&1
+
+sudo: false
