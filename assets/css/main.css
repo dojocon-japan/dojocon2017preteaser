@@ -77,6 +77,24 @@ h1.h3{
 	margin-left: -19px;
 }
 
+.btn-2016{
+	display: inline-block;
+	margin-bottom: 10px;
+	border-color: #0a94b8;
+	border-radius: 0;
+	background-color: #fff;
+	color: #0a94b8;
+	-webkit-transition: background-color .2s linear;
+	transition: background-color .2s linear;
+}
+
+.btn-2016:hover,
+.btn-2016:focus{
+    color: #0a94b8;
+    background-color: #fff701;
+	border-color: #0a94b8;
+}
+
 
 @media(max-width: 767px){
 	.arrow_box {
