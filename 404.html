@@ -52,6 +52,7 @@
 <script src="assets/js/main.js" type="text/javascript"></script>
 <script type="text/javascript">
 var currentUrl = window.location.href,
+    top2016Url = 'http://dojocon.coderdojo.jp/',
     top2016Url = 'http://dojocon2016.coderdojo.jp/';
 // 今年のサイト内に同じURLがある場合は下記からURLを削除してください
 var array2016Url = [
@@ -77,6 +78,8 @@ var array2016Url = [
 
 if ( array2016Url.lastIndexOf(currentUrl) >= 0) {
   window.location = top2016Url;
+} else {
+  window.location = top2017Url;
 }
 
 </script>
