@@ -3,11 +3,11 @@ language: generic
 env:
   global:
     - URI_SCHEME: http
-    - CNAME: dojocon.coderdojo.jp
+    - CNAME: dojocon2017.coderdojo.jp
     - BASEURL: ''
     - GIT_USER: Kite
     - GIT_EMAIL: ixkaito@gmail.com
-    - GITHUB_RELEASE_REPO: dojocon-japan/dojocon.coderdojo.jp
+    - GITHUB_RELEASE_REPO: dojocon-japan/dojocon2017.coderdojo.jp
     - RELEASE_BRANCH: &release_branch release
 
 branches:
